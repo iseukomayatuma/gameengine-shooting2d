@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class CodeStrage: MonoBehaviour 
 {
     public SceneLoad sceneLoad;

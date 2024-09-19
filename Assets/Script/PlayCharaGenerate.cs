@@ -4,26 +4,24 @@ using UnityEngine.TextCore.Text;
 
 public class PlayCharaGenerate : MonoBehaviour
 {
-    public GameObject[] charaCters = new GameObject[3];
-    GameObject playGunner; GameObject playMudMonster;
-    GameObject playMomotarou; GameObject playPicher;
-    Vector3 generatePos
+    public GameObject[] charaCters = new GameObject[4];
+    public static GameObject player;
+    Vector2 generatePos = new Vector2(-0.02f, -2.85f);
     void Start()
     {
-        switch (CharacterDate.charaCter)
-        {
-            case CharacterDate.CHARACTER.Gunner:  GameObject playGunner = Instantiate(charaCters[0]); break;
-            case CharacterDate.CHARACTER.MudMonster: GameObject playMudMonster = Instantiate(charaCters[1]); break;
-            case CharacterDate.CHARACTER.Momotarou: GameObject playMomotarou = Instantiate(charaCters[2]); break;
-            case CharacterDate.CHARACTER.Picher: GameObject playPicher = Instantiate(charaCters[3]); break;
-        }
+        GenerateCharaCter(CharacterDate.charaCter);
+        GeneratePos(player);
     }
     void Update()
     {
         
     }
-    Vector3 GeneratePos()
+    void GenerateCharaCter(CharacterDate.CHARACTER choosecharacter)
     {
-       return 
+            player = Instantiate(charaCters[(int)choosecharacter]);
+    }
+    void GeneratePos(GameObject playchara)
+    {
+        playchara.transform.position = new Vector2(0.135f, -2.5f);
     }
 }

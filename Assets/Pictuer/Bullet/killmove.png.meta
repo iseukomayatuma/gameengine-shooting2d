@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 48f707ed1d5523046864a8ac24462156
+guid: 27e2eba97dce75745bd5851e05a53f01
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7028578073694648011
-    second: Plane_0
+      213: 906752929004381286
+    second: killmove_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plane_0
+      name: killmove_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 37
-        width: 472
-        height: 228
+        x: 112
+        y: 68
+        width: 376
+        height: 464
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc63baed4868a8160800000000000000
-      internalID: 7028578073694648011
+      spriteID: 664e9581cfe659c00800000000000000
+      internalID: 906752929004381286
       vertices: []
       indices: 
       edges: []

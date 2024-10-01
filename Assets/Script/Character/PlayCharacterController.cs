@@ -2,22 +2,21 @@ using UnityEngine;
 
 public class PlayCharacterController : MonoBehaviour
 {
-    Vector2 playerpos;
+    public Vector3 playerpos;
     float movex = 0.5f, movey = 0.5f;
+    PlayCharaGenerate playcharactergenerate;
     void Start()
     {
         Invoke("GetPlayCharacterPos", 0.2f);
-    }
-    void Update()
-    {
-
+        GameObject character_generater = GameObject.Find("CharacterGenerater");
+        playcharactergenerate = character_generater.GetComponent<PlayCharaGenerate>();
     }
     public void MoveLeft()
     {
         if (IsInStage(playerpos, -movex, true))
         {
             playerpos.x += -movex;
-            PlayCharaGenerate.player.transform.position = playerpos;
+            playcharactergenerate.player.transform.position = playerpos;
         }
     }
     public void MoveRight()
@@ -25,7 +24,7 @@ public class PlayCharacterController : MonoBehaviour
         if (IsInStage(playerpos, movex, true))
         {
             playerpos.x += movex;
-            PlayCharaGenerate.player.transform.position = playerpos;
+            playcharactergenerate.player.transform.position = playerpos;
         }    
     }
     public void Moveup()
@@ -33,7 +32,7 @@ public class PlayCharacterController : MonoBehaviour
         if (IsInStage(playerpos, movey, false))
         {
             playerpos.y += movey;
-            PlayCharaGenerate.player.transform.position = playerpos;
+            playcharactergenerate.player.transform.position = playerpos;
         }
     }
     public void MoveDown()
@@ -41,13 +40,13 @@ public class PlayCharacterController : MonoBehaviour
         if (IsInStage(playerpos, -movey, false))
         {
             playerpos.y += -movey;
-            PlayCharaGenerate.player.transform.position = playerpos;
+            playcharactergenerate.player.transform.position = playerpos;
         }
     }
     void GetPlayCharacterPos()
     {
-        playerpos = PlayCharaGenerate.player.transform.position;
-    }
+        playerpos = playcharactergenerate.player.transform.position;
+    }  
     bool IsInStage(Vector2 playerpos, float movevec, bool isx)
     {
         if (isx)
